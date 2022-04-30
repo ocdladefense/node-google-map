@@ -1,50 +1,15 @@
 {
-  "_from": "custom-google-map",
-  "_id": "custom-google-map@1.2.5",
-  "_inBundle": false,
-  "_integrity": "sha512-9V3JM3Vw82zE724WW0ASYDPdKwMWWy3IF6MXulJTuDlXxDsnTyD7XgMMivjIgapBGMnxsoCkYzWSWgxTczIEgw==",
-  "_location": "/custom-google-map",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "custom-google-map",
-    "name": "custom-google-map",
-    "escapedName": "custom-google-map",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/custom-google-map/-/custom-google-map-1.2.5.tgz",
-  "_shasum": "cd963eaf2cf8d5969135b5c3f2182ab8f854e739",
-  "_spec": "custom-google-map",
-  "_where": "/var/www/appdev/modules/maps",
-  "author": {
-    "name": "Alan Shirk, Skylar Borwieck, and OCDLA team"
-  },
-  "bugs": {
-    "url": "https://github.com/ashirk94/custom-google-map/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "A google map api based module that uses a custom theme and markers with info windows.",
-  "homepage": "https://github.com/ashirk94/custom-google-map#readme",
-  "keywords": [
-    "map"
-  ],
-  "license": "MIT",
-  "main": "MapApplication.js",
-  "name": "custom-google-map",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ashirk94/custom-google-map.git"
-  },
+  "name": "@ocdladefense/google-maps",
+  "version": "1.0.0",
+  "description": "Library to interface with Google Maps API.",
+  "main": "view.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.2.5"
+  "keywords": [],
+  "author": "Alan Shirk & Skylar Borwieck",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {}
 }
