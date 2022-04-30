@@ -1,0 +1,19 @@
+#map {
+	height: 100%;
+}
+
+html, body, #wrapper {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+address {
+	padding-right: 2px;
+}
+
+/* Toolbar Styles */
+#toolbar {
+    cursor: pointer;
+    padding: 0;
+}
