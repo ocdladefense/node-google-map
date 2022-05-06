@@ -1,6 +1,6 @@
 {
   "name": "@ocdladefense/google-maps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to interface with Google Maps API.",
   "main": "view.js",
   "scripts": {
