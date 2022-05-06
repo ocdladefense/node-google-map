@@ -1,4 +1,4 @@
-import UrlMarker from "../../UrlMarker.js";
+import UrlMarker from "./UrlMarker.js";
 
 const MapFeature = (function () {
   function MapFeature(feature) {
