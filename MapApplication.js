@@ -17,15 +17,10 @@ const MapApplication = (function () {
   // Set up the maps script and initialize the map object
   // Return the Promise
   function init(fn) {
-    //load feature data after map
-    let results;
-    if (!!fn) {
-      results = Promise.all(
-        fn.map((func) => {
-          return func(this);
-        })
-      );
-    }
+
+    // If any initialization functions were supplied, execute them.
+    let results = !!fn ? Promise.all(fn.map((func) => { return func(this);})) : Promise.resolve("Nothing to initialize.");
+    
 
     var apiKey = this.config.apiKey;
 
