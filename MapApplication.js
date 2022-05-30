@@ -24,15 +24,19 @@ const MapApplication = (function () {
 
     var apiKey = this.config.apiKey;
 
-    var p = new Promise(function (resolve) {
-      let mapElement = document.createElement("script");
-      mapElement.async = true;
-      mapElement.defer = true;
-      mapElement.src = "https://maps.googleapis.com/maps/api/js?key=" + apiKey;
-      mapElement.onload = resolve;
+    if (!document.getElementById('map-script'))
+    {
+        var p = new Promise(function (resolve) {
+        let mapElement = document.createElement("script");
+        mapElement.async = true;
+        mapElement.defer = true;
+        mapElement.setAttribute('id', 'map-script');
+        mapElement.src = "https://maps.googleapis.com/maps/api/js?key=" + apiKey;
+        mapElement.onload = resolve;
 
-      document.head.appendChild(mapElement);
-    });
+        document.head.appendChild(mapElement);
+        });
+
 
     var mapReady = p.then(() => {
       results.then(() => {
@@ -44,6 +48,10 @@ const MapApplication = (function () {
     });
 
     return mapReady;
+}
+else {
+    return results;
+}
   }
 
   function getCache(key) {
