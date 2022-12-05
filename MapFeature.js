@@ -78,6 +78,10 @@ const MapFeature = (function () {
     });
   }
 
+  function getMarker(id) {
+    return this.markers.find(marker => marker.data.Id == id);
+  }
+
   function getLabel() {
     return this.markerLabel;
   }
@@ -89,6 +93,7 @@ const MapFeature = (function () {
     getLabel: getLabel,
     setMap: setMap,
     getMarkers: getMarkers,
+    getMarker: getMarker,
     render: render,
     hide: hide,
     initialize: initialize,

@@ -91,6 +91,10 @@ else {
 
   function addFeature(f) {
     f.setMap(this);
+    let name = f.name;
+    if(!!this.getFeature(name)) {
+      this.features = this.features.filter(f => f.name != name);
+    }
     this.features.push(f);
   }
 

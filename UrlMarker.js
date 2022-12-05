@@ -49,7 +49,7 @@ const UrlMarker = (function () {
              * If the marker doesn't have data to show the user, do not open an info window
              *  Currently the only marker without data is the OCDLA icon 
              */
-            if (marker.data != null) {
+            if(marker.data != null) {
                 // Set up the info window when clicked
                 window.infoWindow = initInfoWindow(marker.data);
                 window.infoWindow.open(map, marker);
@@ -61,6 +61,7 @@ const UrlMarker = (function () {
 
     function initInfoWindow(marker) {
 
+        console.log(marker);
         // Check the marker type (contact or court)
         if (marker.type == "Member") {
             // Info window for contact marker, showing marker details
@@ -68,19 +69,21 @@ const UrlMarker = (function () {
                 content:
                     `<div id="infoWindow">
                         <div>
-                            <label style="text-align:center;"><b>${marker.name || ""}</b></label><br><br>
+                            <label style="font-size:16px;font-weight:bold;">
+                                <a target="_new" href="/directory/member/${marker.Id}">${marker.Name || ""}</a>
+                            </label>
                         </div>
                         <div>
-                        <label>${marker.primary || ""}</label><br>
+                            <label>${marker.primary || ""}</label>
                         </div>
                         <div>
-                            <label>${marker.phone || ""}</label><br>
-                            <label>${marker.email || ""} </label><br>
-                        </div><br>
+                            <label>${marker.Phone || ""}</label>
+                            <label>${marker.Email || ""} </label>
+                        </div>
                         <address>
-                            <label>${marker.mailingAddress.street}</label><br>
+                            <label>${marker.MailingAddress.street}</label>
                             <label>
-                                ${marker.mailingAddress.city || ""}, ${marker.mailingAddress.state || marker.mailingAddress.country || ""} ${marker.mailingAddress.postalCode || ""}
+                                ${marker.MailingAddress.city || ""}, ${marker.MailingAddress.state || marker.MailingAddress.country || ""} ${marker.MailingAddress.postalCode || ""}
                             </label>
                         </address>
                     </div>`
@@ -92,19 +95,19 @@ const UrlMarker = (function () {
             content:
                 `<div id="infoWindow" style="text-align:center;">
                     <div>
-                        <strong><label style="text-align:center;">${marker.name}</label><br></strong>
+                        <strong><label style="text-align:center;">${marker.Name}</label><br /></strong>
                     </div>
                     <div>
                      Court info not yet implemented
                     </div>
                     <!--
                     <div>
-                        <label>${marker.mailingAddress}</label><br>
-                        <label>${marker.city}, ${marker.state} ${marker.zipcode}</label><br>
-                    </div><br>  
+                        <label>${marker.MailingAddress.street}</label><br>
+                        <label>${marker.MailingAddress.city}, ${marker.MailingAddress.state} ${marker.MailingAddress.postalCode}</label><br>
+                    </div>
                     <div>
                         <label>${marker.district}<br>
-                            <a href="https://${marker.website}">${marker.website}</a>   
+                            <a target="_new" href="https://${marker.website}">${marker.website}</a>   
                         </label>
                     </div> 
                     -->
